@@ -1,4 +1,3 @@
-
 ## Overview
 
 In this lab, I converted simple scripts to production-ready MLOps by exposing a Wine Classification model as a web API using FastAPI and uvicorn.
