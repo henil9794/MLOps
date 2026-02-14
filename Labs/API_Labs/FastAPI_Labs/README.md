@@ -49,7 +49,29 @@ MLOps
     ```bash
     uvicorn app:main --reload
     ```
-4. Testing endpoints - to view the documentation of your api model you can use [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) (or) [http://localhost:8000/docs](http://localhost:8000/docs) after you run you run your FastAPI app.
+4. Testing endpoints
+
+FastAPI Implementation Details
+Data Models (Pydantic)
+We use Pydantic BaseModel to define our "Data Contracts." This ensures that the data sent by the user and the data returned by the API are strictly validated.
+
+1. WineData
+Defines the 13 chemical features (Alcohol, Magnesium, Proline, etc.) required for a prediction. If a user sends a string instead of a float, FastAPI will catch the error automatically.
+
+2. WineResponse & DetailedResponse
+
+WineResponse: Returns a simple integer prediction.
+
+DetailedResponse: Returns response as integer, confidence scores in dictionary and top confidence as float value.
+
+API Endpoints
+GET /: A health check endpoint to verify the server is running.
+
+POST /predict: Receives wine features and returns the predicted cultivator class (0, 1, or 2).
+
+POST /predict/confidence: Returns the prediction along with a detailed breakdown of how certain the Random Forest model is about its decision.
+
+To view the documentation of your api model you can use [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) (or) [http://localhost:8000/docs](http://localhost:8000/docs) after you run you run your FastAPI app.
     
 ![API page](assets/Fast_API_Lab.png)
    
