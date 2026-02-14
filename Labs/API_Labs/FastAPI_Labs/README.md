@@ -21,7 +21,7 @@ When you will run pip install -r requirements.txt then - **fastapi[all]** in **r
 ```
 MLOps
 └── API_Labs
-    └── fastapi_lab1
+    └── FastAPI_Labs
         ├── assets/
         ├── model/
         │   └── wine_model.pkl
